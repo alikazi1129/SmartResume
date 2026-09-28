@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>SmartResume - Register</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .register-box {
+            width: 350px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #075985;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccd6dc;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #075985;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #05496b;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        a {
+            color: #075985;
+        }
+
+        .error {
+            color: #c0392b;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="register-box">
+
+        <h1>SmartResume</h1>
+
+        <h3>Create Account</h3>
+
+
+        {% if error %}
+
+        <p class="error">
+            {{ error }}
+        </p>
+
+        {% endif %}
+
+
+        <form method="POST">
+
+            <label>Name</label>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Create a password"
+                required
+            >
+
+
+            <button type="submit">
+                Register
+            </button>
+
+        </form>
+
+
+        <p>
+            Already have an account?
+
+            <a href="/login">
+                Login
+            </a>
+
+        </p>
+
+    </div>
+
+</body>
+
+</html>

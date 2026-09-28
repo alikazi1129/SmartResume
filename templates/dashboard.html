@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartResume - Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <div class="dashboard-header">
+
+            <div>
+                <h1>SmartResume</h1>
+                <p>Welcome, {{ session["user_name"] }} 👋</p>
+            </div>
+
+            <a href="/logout" class="logout-button">
+                Logout
+            </a>
+
+        </div>
+
+
+        <div class="dashboard-content">
+
+            <h2>Dashboard</h2>
+
+            <p class="dashboard-subtitle">
+                Manage your resumes and career tools from here.
+            </p>
+
+
+            <div class="dashboard-cards">
+
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">📝</div>
+
+                    <h3>Create Resume</h3>
+
+                    <p>
+                        Create a professional and ATS-friendly resume.
+                    </p>
+
+                    <a href="/" class="dashboard-button">
+                        Create Resume
+                    </a>
+                </div>
+
+
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">📁</div>
+
+                    <h3>My Resumes</h3>
+
+                    <p>
+                        View and manage your saved resumes.
+                    </p>
+
+                    <a href="/" class="dashboard-button">
+                        View Resumes
+                    </a>
+                </div>
+
+
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">📊</div>
+
+                    <h3>ATS Score</h3>
+
+                    <p>
+                        Check how well your resume performs for ATS.
+                    </p>
+
+                    <a href="/" class="dashboard-button">
+                        Check ATS
+                    </a>
+                </div>
+
+
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">🤖</div>
+
+                    <h3>AI Assistant</h3>
+
+                    <p>
+                        Get AI-powered suggestions for your resume.
+                    </p>
+
+                    <a href="/" class="dashboard-button">
+                        Open AI Assistant
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,1572 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f8fb;
+    color: #17202a;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    height: 75px;
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #075985;
+}
+
+.logo span {
+    color: #0b83bd;
+}
+
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #087ca7;
+}
+
+
+header button {
+    background: #075985;
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+
+    min-height: 600px;
+
+    padding: 80px 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #eef7fc,
+        #ffffff
+    );
+}
+
+
+.hero-text {
+    max-width: 600px;
+}
+
+
+.tagline {
+    color: #087ca7;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+.hero h1 {
+
+    font-size: 55px;
+
+    line-height: 1.15;
+
+    margin: 15px 0;
+}
+
+
+.hero h1 span {
+    color: #087ca7;
+}
+
+
+.hero-text > p {
+    font-size: 18px;
+
+    color: #555;
+}
+
+
+.main-button {
+
+    margin-top: 25px;
+
+    padding: 14px 25px;
+
+    background: #075985;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    font-size: 15px;
+}
+
+
+.main-button:hover {
+    background: #043d5c;
+}
+
+
+/* ================= RESUME CARD ================= */
+
+.resume-card {
+
+    width: 380px;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.12);
+
+    transform: rotate(2deg);
+}
+
+
+.resume-card h2 {
+    color: #075985;
+}
+
+
+.resume-card h3 {
+
+    color: #087ca7;
+
+    margin-top: 20px;
+
+    margin-bottom: 7px;
+}
+
+
+.resume-card hr {
+    margin-top: 15px;
+}
+
+
+/* ================= FEATURES ================= */
+
+.features {
+
+    padding: 80px 8%;
+
+    background: white;
+
+    text-align: center;
+}
+
+
+.features > h2 {
+
+    font-size: 35px;
+
+    margin-bottom: 40px;
+
+    color: #075985;
+}
+
+
+.feature-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+.feature {
+
+    background: #f5f9fb;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    border: 1px solid #e2edf2;
+
+    transition: 0.3s;
+}
+
+
+.feature:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+.feature h3 {
+
+    color: #075985;
+
+    margin-bottom: 10px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    background: #063b56;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 35px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .feature-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .feature-container {
+        grid-template-columns: 1fr;
+    }
+
+    .resume-card {
+        width: 100%;
+    }
+
+}
+/* ================= RESUME BUILDER ================= */
+
+.builder {
+    padding: 80px 8%;
+    background: #f4f8fb;
+}
+
+
+.builder-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+.builder-heading p {
+    color: #087ca7;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+.builder-heading h2 {
+    font-size: 35px;
+    color: #075985;
+    margin: 10px 0;
+}
+
+
+.builder-heading span {
+    color: #666;
+}
+
+
+/* BUILDER LAYOUT */
+
+.builder-container {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+
+/* FORM */
+
+.form-box {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,0.07);
+}
+
+
+.form-box h3 {
+
+    color: #075985;
+
+    margin-top: 20px;
+
+    margin-bottom: 10px;
+}
+
+
+.input-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+.form-box label {
+
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+
+.form-box input,
+.form-box textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccd6dc;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    font-family: Arial, sans-serif;
+}
+
+
+.form-box input:focus,
+.form-box textarea:focus {
+
+    border-color: #087ca7;
+}
+
+
+.form-box textarea {
+
+    min-height: 90px;
+
+    resize: vertical;
+}
+
+
+/* SAVE BUTTON */
+
+.save-button {
+
+    margin-top: 25px;
+
+    background: #075985;
+
+    color: white;
+
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+.save-button:hover {
+
+    background: #043d5c;
+}
+
+
+/* ================= PREVIEW ================= */
+
+.preview-box {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,0.07);
+}
+
+
+.preview-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+
+.preview-header h3 {
+
+    color: #075985;
+}
+
+
+.print-button {
+
+    background: #087ca7;
+
+    color: white;
+
+    border: none;
+
+    padding: 9px 15px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+
+/* RESUME */
+
+.resume-preview {
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+    padding: 40px;
+
+    min-height: 700px;
+}
+
+
+.resume-preview h1 {
+
+    color: #075985;
+
+    font-size: 30px;
+
+    margin-bottom: 5px;
+}
+
+
+.resume-preview > p {
+
+    color: #555;
+}
+
+
+.resume-preview hr {
+
+    margin: 20px 0;
+
+    border: none;
+
+    border-top: 1px solid #ddd;
+}
+
+
+.resume-preview h3 {
+
+    color: #087ca7;
+
+    font-size: 15px;
+
+    margin-top: 25px;
+
+    padding-bottom: 5px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+.resume-preview p {
+
+    margin-top: 8px;
+
+    white-space: pre-line;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    .builder-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .input-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .builder {
+
+        padding: 60px 5%;
+    }
+
+    .resume-preview {
+
+        padding: 25px;
+    }
+
+}
+/* ================= DYNAMIC RESUME ITEMS ================= */
+
+.dynamic-item {
+
+    background: #f7fafc;
+
+    border: 1px solid #dce7ed;
+
+    padding: 18px;
+
+    border-radius: 8px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.dynamic-item input,
+.dynamic-item textarea {
+
+    margin-bottom: 10px;
+
+}
+
+
+.dynamic-item textarea {
+
+    min-height: 80px;
+
+}
+
+
+/* ADD BUTTON */
+
+.add-button {
+
+    background: white;
+
+    color: #075985;
+
+    border: 1px solid #075985;
+
+    padding: 9px 15px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+}
+
+
+.add-button:hover {
+
+    background: #075985;
+
+    color: white;
+
+}
+
+
+/* REMOVE BUTTON */
+
+.remove-button {
+
+    background: #c0392b;
+
+    color: white;
+
+    border: none;
+
+    padding: 7px 12px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+}
+
+
+.remove-button:hover {
+
+    background: #962d22;
+
+}
+
+
+/* PREVIEW DYNAMIC ITEMS */
+
+.preview-item {
+
+    margin-bottom: 15px;
+
+}
+
+
+.preview-item h4 {
+
+    color: #222;
+
+    margin-bottom: 3px;
+
+}
+
+
+.preview-item p {
+
+    margin: 2px 0;
+
+}
+/* =====================================================
+   RESUME TEMPLATES
+   ===================================================== */
+
+
+/* ================= TEMPLATE SELECTOR ================= */
+
+.template-label {
+
+    display: block;
+
+    font-size: 12px;
+
+    color: #666;
+
+    margin-top: 8px;
+
+    margin-bottom: 4px;
+
+}
+
+
+#templateSelect {
+
+    width: 180px;
+
+    padding: 8px;
+
+    border: 1px solid #ccd6dc;
+
+    border-radius: 5px;
+
+    background: white;
+
+}
+
+
+/* =====================================================
+   PROFESSIONAL TEMPLATE
+   ===================================================== */
+
+.professional-template {
+
+    font-family: Arial, sans-serif;
+
+    color: #222;
+
+}
+
+
+.professional-template h1 {
+
+    color: #075985;
+
+    font-size: 30px;
+
+    border: none;
+
+}
+
+
+.professional-template h3 {
+
+    color: #087ca7;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    border-bottom: 1px solid #ddd;
+
+}
+
+
+/* =====================================================
+   MODERN TEMPLATE
+   ===================================================== */
+
+.modern-template {
+
+    font-family: Arial, sans-serif;
+
+    color: #222;
+
+    border-left: 8px solid #075985;
+
+}
+
+
+.modern-template h1 {
+
+    color: #075985;
+
+    font-size: 34px;
+
+    text-transform: uppercase;
+
+}
+
+
+.modern-template > p:first-of-type {
+
+    color: #087ca7;
+
+    font-weight: bold;
+
+}
+
+
+.modern-template h3 {
+
+    color: white;
+
+    background: #075985;
+
+    padding: 7px 10px;
+
+    border: none;
+
+    border-radius: 3px;
+
+}
+
+
+.modern-template .preview-item {
+
+    border-left: 3px solid #087ca7;
+
+    padding-left: 12px;
+
+}
+
+
+/* =====================================================
+   SIMPLE TEMPLATE
+   ===================================================== */
+
+.simple-template {
+
+    font-family: Georgia, serif;
+
+    color: #222;
+
+}
+
+
+.simple-template h1 {
+
+    color: #222;
+
+    text-align: center;
+
+    font-size: 32px;
+
+}
+
+
+.simple-template > p:first-of-type {
+
+    text-align: center;
+
+}
+
+
+.simple-template h3 {
+
+    color: #222;
+
+    border-bottom: 2px solid #222;
+
+    text-align: left;
+
+    letter-spacing: 0;
+
+}
+
+
+.simple-template hr {
+
+    border-top: 2px solid #222;
+
+}
+
+
+/* =====================================================
+   TEMPLATE ANIMATION
+   ===================================================== */
+
+.resume-preview {
+
+    transition: 0.3s ease;
+
+}
+/* ATS SCORE */
+
+.ats-section {
+    padding: 60px 8%;
+    background: #f7fafc;
+}
+
+.ats-section h2 {
+    text-align: center;
+    color: #075985;
+    margin-bottom: 8px;
+}
+
+.ats-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.ats-card {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.score-box {
+    text-align: center;
+    min-width: 180px;
+}
+
+.score-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 10px solid #dce7ed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: 32px;
+    font-weight: bold;
+    color: #075985;
+}
+
+.score-circle small {
+    font-size: 16px;
+    color: #666;
+    margin-left: 3px;
+}
+
+.score-box h3 {
+    margin-top: 15px;
+}
+
+.ats-result {
+    flex: 1;
+}
+
+.ats-result h3 {
+    color: #075985;
+}
+
+.progress-container {
+    width: 100%;
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+#atsProgress {
+    width: 0%;
+    height: 100%;
+    background: #075985;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+#atsMessage {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.ats-check {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.ats-button {
+    margin-top: 20px;
+    background: #075985;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.ats-button:hover {
+    background: #05496b;
+}
+
+@media (max-width: 700px) {
+
+    .ats-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ats-result {
+        width: 100%;
+    }
+
+}
+/* ================= JOB ROLE SUGGESTIONS ================= */
+
+#jobRole {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccd6dc;
+    border-radius: 6px;
+    background: white;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.job-suggestions {
+    background: #f7fafc;
+    border: 1px solid #dce7ed;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.job-suggestions h4 {
+    color: #075985;
+    margin-bottom: 10px;
+}
+
+.job-suggestions ul {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.job-suggestions li {
+    margin-bottom: 5px;
+}
+
+.suggestion-note {
+    color: #666;
+    font-size: 13px;
+}
+/* ================= AI WRITING ASSISTANT ================= */
+
+.ai-assistant-box {
+    background: #f7fafc;
+    border: 1px solid #dce7ed;
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 20px;
+}
+
+.ai-assistant-box p {
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.ai-button {
+    background: #075985;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.ai-button:hover {
+    background: #05496b;
+}
+
+.ai-suggestion {
+    background: white;
+    border-left: 4px solid #075985;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    color: #333;
+    line-height: 1.6;
+}
+/* ================= PDF DOWNLOAD ================= */
+
+.pdf-button {
+    display: block;
+    margin: 20px auto;
+    background: #075985;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.pdf-button:hover {
+    background: #05496b;
+}
+
+/* ================= QR CODE PORTFOLIO ================= */
+
+.qr-section {
+    background: #f7fafc;
+    border: 1px solid #dce7ed;
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 20px;
+}
+
+.qr-section p {
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.qr-section input {
+    width: 100%;
+    padding: 11px;
+ 
+    border: 1px solid #ccd6dc;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.qr-button {
+    background: #075985;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.qr-button:hover {
+    background: #05496b;
+}
+
+.qr-code {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+/* ================= SAVE RESUME ================= */
+
+.save-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+}
+
+.save-button,
+.load-button {
+    border: none;
+    padding: 11px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.save-button {
+    background: #075985;
+    color: white;
+}
+
+.save-button:hover {
+    background: #05496b;
+}
+
+.load-button {
+    background: white;
+    color: #075985;
+    border: 1px solid #075985;
+}
+
+.load-button:hover {
+    background: #075985;
+    color: white;
+}
+
+@media (max-width: 600px) {
+
+    .save-buttons {
+        flex-direction: column;
+    }
+
+}
+/* ================= SAVED RESUMES ================= */
+
+.saved-resumes-section {
+
+    margin-top: 25px;
+    padding: 20px;
+
+    background: #f7fafc;
+
+    border: 1px solid #dce7ed;
+
+    border-radius: 10px;
+}
+
+.saved-resumes-section h3 {
+
+    color: #075985;
+
+    margin-bottom: 15px;
+}
+
+.saved-resume-item {
+
+    background: white;
+
+    border: 1px solid #dce7ed;
+
+    border-radius: 8px;
+
+    padding: 15px;
+
+    margin-bottom: 12px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.saved-resume-info {
+
+    flex: 1;
+}
+
+.saved-resume-info strong {
+
+    display: block;
+
+    font-size: 16px;
+
+    color: #222;
+
+    margin-bottom: 5px;
+}
+
+.saved-resume-info span {
+
+    color: #666;
+
+    font-size: 13px;
+}
+
+.saved-resume-buttons {
+
+    display: flex;
+
+    gap: 8px;
+}
+
+.load-saved-button {
+
+    background: #075985;
+
+    color: white;
+
+    border: none;
+
+    padding: 8px 12px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.delete-saved-button {
+
+    background: #c0392b;
+
+    color: white;
+
+    border: none;
+
+    padding: 8px 12px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.load-saved-button:hover {
+
+    background: #05496b;
+}
+
+.delete-saved-button:hover {
+
+    background: #962d22;
+}
+
+@media (max-width: 600px) {
+
+    .saved-resume-item {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .saved-resume-buttons {
+
+        width: 100%;
+    }
+
+    .saved-resume-buttons button {
+
+        flex: 1;
+    }
+}
+.logout-button {
+
+    background: #c0392b;
+
+    color: white !important;
+
+    padding: 8px 14px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.logout-button:hover {
+
+    background: #962d22;
+}
+/* ============================= */
+/* DASHBOARD */
+/* ============================= */
+
+.dashboard-container {
+    min-height: 100vh;
+    background: #f5f7fa;
+}
+
+.dashboard-header {
+    background: #075985;
+    color: white;
+    padding: 20px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.dashboard-header p {
+    margin: 5px 0 0;
+    font-size: 15px;
+}
+
+.dashboard-content {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.dashboard-content h2 {
+    font-size: 30px;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.dashboard-subtitle {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+
+    border: 1px solid #e0e6eb;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.dashboard-icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.dashboard-card h3 {
+    margin: 5px 0 10px;
+    color: #075985;
+}
+
+.dashboard-card p {
+    color: #666;
+    min-height: 45px;
+}
+
+.dashboard-button {
+    display: inline-block;
+
+    background: #075985;
+    color: white;
+
+    padding: 10px 16px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    margin-top: 10px;
+}
+
+.dashboard-button:hover {
+    background: #05496b;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .dashboard-header {
+        padding: 20px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-content {
+        margin-top: 25px;
+    }
+
+}
+/* ================= PDF DOWNLOAD BUTTON ================= */
+
+.pdf-button {
+    background: #075985;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.pdf-button:hover {
+    background: #05496b;
+}
+/* ================= PDF / PRINT RESUME ================= */
+
+@media print {
+
+    body {
+        background: white !important;
+    }
+
+    header,
+    footer,
+    .builder-heading,
+    .form-box,
+    .preview-header,
+    .ats-section,
+    .saved-resumes-section,
+    .features,
+    .hero {
+        display: none !important;
+    }
+
+    .builder {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .builder-container {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .preview-box {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    #resumePreview {
+        width: 100% !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .preview-item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    h3 {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+}

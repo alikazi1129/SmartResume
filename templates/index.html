@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SmartResume</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            Smart<span>Resume</span>
+        </div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Resume Builder</a>
+            <a href="#">ATS Score</a>
+            <a href="#">AI Assistant</a>
+            <a href="#">About</a>
+            <a href="/logout" class="logout-button">
+    Logout
+</a>
+        </nav>
+
+        <button onclick="openBuilder()">
+            Create Resume
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <p class="tagline">
+                    AI-POWERED RESUME BUILDER
+                </p>
+
+                <h1>
+                    Build a Resume That
+                    <span>Gets Noticed.</span>
+                </h1>
+
+                <p>
+                    Create professional and ATS-friendly
+                    resumes easily with SmartResume.
+                </p>
+
+                <button
+                    class="main-button"
+                    onclick="openBuilder()">
+
+                    Create My Resume
+
+                </button>
+
+            </div>
+
+
+            <div class="resume-card">
+
+                <h2>
+                    YOUR NAME
+                </h2>
+
+                <p>
+                    ALI KAZI 😎
+                </p>
+
+                <hr>
+
+                <h3>
+                    PROFILE
+                </h3>
+
+                <p>
+                    Motivated Computer Science student
+                    with technical and problem-solving skills.
+                </p>
+
+                <h3>
+                    SKILLS
+                </h3>
+
+                <p>
+                    Python • Java • SQL • HTML • CSS
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="features">
+
+            <h2>
+                Smart Features
+            </h2>
+
+            <div class="feature-container">
+
+                <div class="feature">
+                    <h3>📄 Resume Builder</h3>
+                    <p>
+                        Create professional resumes easily.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>🤖 AI Assistant</h3>
+                    <p>
+                        Improve your resume content.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>📊 ATS Score</h3>
+                    <p>
+                        Check your resume ATS compatibility.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>🎯 Job Suggestions</h3>
+                    <p>
+                        Get skills based on your target job.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    <!-- ================= RESUME BUILDER ================= -->
+
+<section id="builder" class="builder">
+
+    <div class="builder-heading">
+
+        <p>RESUME BUILDER</p>
+
+        <h2>Create Your Professional Resume</h2>
+
+        <span>
+            Enter your details and see your resume live.
+        </span>
+
+    </div>
+
+
+    <div class="builder-container">
+
+
+        <!-- ================= FORM ================= -->
+
+        <div class="form-box">
+
+            <h3>Personal Information</h3>
+
+            <div class="input-grid">
+
+                <div>
+                    <label>Full Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name"
+                        oninput="updateResume()">
+                </div>
+
+
+                <div>
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="example@gmail.com"
+                        oninput="updateResume()">
+                </div>
+
+
+                <div>
+                    <label>Phone</label>
+
+                    <input
+                        type="text"
+                        id="phone"
+                        placeholder="+91 XXXXX XXXXX"
+                        oninput="updateResume()">
+                </div>
+
+
+                <div>
+                    <label>Location</label>
+
+                    <input
+                        type="text"
+                        id="location"
+                        placeholder="Mumbai, India"
+                        oninput="updateResume()">
+                </div>
+
+
+                <div>
+                    <label>LinkedIn</label>
+
+                    <input
+                        type="text"
+                        id="linkedin"
+                        placeholder="LinkedIn URL"
+                        oninput="updateResume()">
+                </div>
+
+
+                <div>
+                    <label>GitHub</label>
+
+                    <input
+                        type="text"
+                        id="github"
+                        placeholder="GitHub URL"
+                        oninput="updateResume()">
+                </div>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+<!-- ================= TARGET JOB ROLE ================= -->
+
+<h3>Target Job Role</h3>
+
+<select id="jobRole" onchange="showJobSuggestions()">
+
+    <option value="">
+        Select your target job role
+    </option>
+
+    <option value="web">
+        Web Developer
+    </option>
+
+    <option value="python">
+        Python Developer
+    </option>
+
+    <option value="java">
+        Java Developer
+    </option>
+
+    <option value="data">
+        Data Analyst
+    </option>
+
+    <option value="software">
+        Software Developer
+    </option>
+
+    <option value="cybersecurity">
+        Cybersecurity Analyst
+    </option>
+
+</select>
+
+<div id="jobSuggestions" class="job-suggestions">
+
+    Select a job role to see recommended skills.
+
+</div>
+
+            <h3>Professional Summary</h3>
+
+            <textarea
+                id="summary"
+                placeholder="Write your professional summary..."
+                oninput="updateResume()"></textarea>
+
+<!-- ================= AI WRITING ASSISTANT ================= -->
+
+<h3>AI Writing Assistant</h3>
+
+<div class="ai-assistant-box">
+
+    <p>
+        Improve your professional summary with smart suggestions.
+    </p>
+
+    <button type="button" class="ai-button" onclick="generateAISuggestion()">
+        ✨ Improve My Summary
+    </button>
+
+    <div id="aiSuggestion" class="ai-suggestion">
+        Your AI suggestion will appear here.
+    </div>
+
+</div>
+<!-- ================= QR CODE PORTFOLIO ================= -->
+
+<h3>QR Code Portfolio</h3>
+
+<div class="qr-section">
+
+    <p>
+        Add your portfolio, GitHub, or LinkedIn URL.
+    </p>
+
+    <input
+        type="url"
+        id="portfolioURL"
+        placeholder="https://github.com/username"
+    >
+
+    <button
+        type="button"
+        class="qr-button"
+        onclick="generateQRCode()"
+    >
+        🔳 Generate QR Code
+    </button>
+
+    <div id="qrCode" class="qr-code"></div>
+
+</div>
+
+
+
+<!-- ================= EDUCATION ================= -->
+
+<h3>Education</h3>
+
+<div id="educationContainer">
+
+    <div class="dynamic-item">
+
+        <input
+            type="text"
+            class="education-degree"
+            placeholder="Degree / Course"
+            oninput="updateResume()">
+
+        <input
+            type="text"
+            class="education-college"
+            placeholder="College / University"
+            oninput="updateResume()">
+
+        <input
+            type="text"
+            class="education-year"
+            placeholder="Year / Percentage"
+            oninput="updateResume()">
+
+        <button
+            type="button"
+            class="remove-button"
+            onclick="removeItem(this)">
+
+            Remove
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<button
+    type="button"
+    class="add-button"
+    onclick="addEducation()">
+
+    + Add Education
+
+</button>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<h3>Projects</h3>
+
+<div id="projectsContainer">
+
+    <div class="dynamic-item">
+
+        <input
+            type="text"
+            class="project-name"
+            placeholder="Project Name"
+            oninput="updateResume()">
+
+        <textarea
+            class="project-description"
+            placeholder="Project Description"
+            oninput="updateResume()"></textarea>
+
+        <input
+            type="text"
+            class="project-technologies"
+            placeholder="Technologies Used"
+            oninput="updateResume()">
+
+        <button
+            type="button"
+            class="remove-button"
+            onclick="removeItem(this)">
+
+            Remove
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<button
+    type="button"
+    class="add-button"
+    onclick="addProject()">
+
+    + Add Project
+
+</button>
+
+
+<!-- ================= CERTIFICATIONS ================= -->
+
+<h3>Certifications</h3>
+
+<div id="certificationContainer">
+
+    <div class="dynamic-item">
+
+        <input
+            type="text"
+            class="certification-name"
+            placeholder="Certification Name"
+            oninput="updateResume()">
+
+        <input
+            type="text"
+            class="certification-issuer"
+            placeholder="Issued By"
+            oninput="updateResume()">
+
+        <input
+            type="text"
+            class="certification-year"
+            placeholder="Year"
+            oninput="updateResume()">
+
+        <button
+            type="button"
+            class="remove-button"
+            onclick="removeItem(this)">
+
+            Remove
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<button
+    type="button"
+    class="add-button"
+    onclick="addCertification()">
+
+    + Add Certification
+
+</button>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<h3>Work Experience</h3>
+
+<div id="experienceContainer">
+
+    <div class="dynamic-item">
+
+        <input
+            type="text"
+            class="experience-position"
+            placeholder="Job Position"
+            oninput="updateResume()">
+
+        <input
+            type="text"
+            class="experience-company"
+            placeholder="Company Name"
+            oninput="updateResume()">
+
+        <input
+            type="text"
+            class="experience-duration"
+            placeholder="Duration"
+            oninput="updateResume()">
+
+        <textarea
+            class="experience-description"
+            placeholder="Work Description"
+            oninput="updateResume()"></textarea>
+
+        <button
+            type="button"
+            class="remove-button"
+            onclick="removeItem(this)">
+
+            Remove
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<button
+    type="button"
+    class="add-button"
+    onclick="addExperience()">
+
+    + Add Experience
+
+</button>
+
+
+        </div>
+
+
+        <!-- ================= LIVE PREVIEW ================= -->
+
+        <div class="preview-box">
+
+<div class="preview-header">
+
+    <div>
+
+        <h3>Live Preview</h3>
+
+        <label class="template-label">
+            Choose Template
+        </label>
+
+        <select
+            id="templateSelect"
+            onchange="changeTemplate()">
+
+            <option value="professional">
+                Professional
+            </option>
+
+            <option value="modern">
+                Modern
+            </option>
+
+            <option value="simple">
+                Simple
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <button
+        class="print-button"
+        onclick="window.print()">
+
+        Download PDF
+
+    </button>
+
+</div>
+
+
+<div id="resumePreview"
+     class="resume-preview professional-template">
+
+    <h1 id="previewName">
+        Your Name
+    </h1>
+
+    <p id="previewContact">
+        Email | Phone | Location
+    </p>
+
+    <hr>
+
+    <h3>PROFILE</h3>
+
+    <p id="previewSummary">
+        Your professional summary will appear here.
+    </p>
+
+    <h3>EDUCATION</h3>
+
+    <div id="previewEducation">
+        Your education details will appear here.
+    </div>
+
+</div>
+
+
+<!-- BUTTONS OUTSIDE RESUME PREVIEW -->
+
+<button
+    type="button"
+    class="pdf-button"
+    onclick="downloadResumePDF()">
+    📄 Download Resume PDF
+</button>
+
+<div class="save-buttons">
+
+    <button
+        id="saveResumeButton"
+        onclick="saveResume()">
+        💾 Save Resume
+    </button>
+
+    <button
+        type="button"
+        class="load-button"
+        onclick="loadResume()">
+        📂 Load Resume
+    </button>
+
+</div>
+<!-- ================= SAVED RESUMES ================= -->
+
+<div class="saved-resumes-section">
+
+    <h3>📁 My Saved Resumes</h3>
+
+    <div id="savedResumes">
+
+        <p>
+            Loading saved resumes...
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+
+                <h3>SKILLS</h3>
+
+                <p id="previewSkills">
+                    Your technical skills will appear here.
+                </p>
+
+
+                <h3>PROJECTS</h3>
+
+<div id="previewProjects">
+    Your projects will appear here.
+</div>
+
+
+                <h3>CERTIFICATIONS</h3>
+
+<div id="previewCertifications">
+    Your certifications will appear here.
+</div>
+
+
+                <h3>EXPERIENCE</h3>
+
+<div id="previewExperience">
+    Your experience will appear here.
+</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ATS SCORE SECTION -->
+<section id="ats" class="ats-section">
+
+    <h2>ATS Resume Checker</h2>
+    <p class="ats-subtitle">
+        Check how well your resume is optimized for Applicant Tracking Systems.
+    </p>
+
+    <div class="ats-card">
+
+        <div class="score-box">
+            <div class="score-circle">
+                <span id="atsScore">0</span>
+                <small>/100</small>
+            </div>
+
+            <h3>ATS Score</h3>
+        </div>
+
+        <div class="ats-result">
+
+            <h3>Resume Analysis</h3>
+
+            <div class="progress-container">
+                <div id="atsProgress"></div>
+            </div>
+
+            <p id="atsMessage">
+                Click the button to calculate your ATS score.
+            </p>
+
+            <div id="atsDetails"></div>
+
+            <button class="ats-button" onclick="calculateATS()">
+                Calculate ATS Score
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+    </main>
+
+
+    <footer>
+
+        <h3>SmartResume</h3>
+
+        <p>
+            AI-Powered Resume Builder and Career Assistant
+        </p>
+
+        <p>
+            © 2026 SmartResume
+        </p>
+
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+</body>
+
+</html>
